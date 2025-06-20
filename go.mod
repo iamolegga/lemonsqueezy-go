@@ -1,4 +1,4 @@
-module github.com/NdoleStudio/lemonsqueezy-go
+module github.com/iamolegga/lemonsqueezy-go
 
 go 1.19
 

@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NdoleStudio/lemonsqueezy-go/internal/helpers"
-	"github.com/NdoleStudio/lemonsqueezy-go/internal/stubs"
+	"github.com/iamolegga/lemonsqueezy-go/internal/helpers"
+	"github.com/iamolegga/lemonsqueezy-go/internal/stubs"
 	"github.com/stretchr/testify/assert"
 )
 

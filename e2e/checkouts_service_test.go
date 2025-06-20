@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/NdoleStudio/lemonsqueezy-go"
+	"github.com/iamolegga/lemonsqueezy-go"
 )
 
 func TestCheckoutsService_Create(t *testing.T) {

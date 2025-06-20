@@ -1,12 +1,12 @@
 # lemonsqueezy-go
 
-[![Build](https://github.com/NdoleStudio/lemonsqueezy-go/actions/workflows/main.yml/badge.svg)](https://github.com/NdoleStudio/lemonsqueezy-go/actions/workflows/main.yml)
-[![codecov](https://codecov.io/gh/NdoleStudio/lemonsqueezy-go/branch/main/graph/badge.svg)](https://codecov.io/gh/NdoleStudio/lemonsqueezy-go)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/NdoleStudio/lemonsqueezy-go/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/NdoleStudio/lemonsqueezy-go/?branch=main)
-[![Go Report Card](https://goreportcard.com/badge/github.com/NdoleStudio/lemonsqueezy-go)](https://goreportcard.com/report/github.com/NdoleStudio/lemonsqueezy-go)
-[![GitHub contributors](https://img.shields.io/github/contributors/NdoleStudio/lemonsqueezy-go)](https://github.com/NdoleStudio/lemonsqueezy-go/graphs/contributors)
-[![GitHub license](https://img.shields.io/github/license/NdoleStudio/lemonsqueezy-go?color=brightgreen)](https://github.com/NdoleStudio/lemonsqueezy-go/blob/master/LICENSE)
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/NdoleStudio/lemonsqueezy-go)](https://pkg.go.dev/github.com/NdoleStudio/lemonsqueezy-go)
+[![Build](https://github.com/iamolegga/lemonsqueezy-go/actions/workflows/main.yml/badge.svg)](https://github.com/iamolegga/lemonsqueezy-go/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/iamolegga/lemonsqueezy-go/branch/main/graph/badge.svg)](https://codecov.io/gh/iamolegga/lemonsqueezy-go)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/iamolegga/lemonsqueezy-go/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/iamolegga/lemonsqueezy-go/?branch=main)
+[![Go Report Card](https://goreportcard.com/badge/github.com/iamolegga/lemonsqueezy-go)](https://goreportcard.com/report/github.com/iamolegga/lemonsqueezy-go)
+[![GitHub contributors](https://img.shields.io/github/contributors/iamolegga/lemonsqueezy-go)](https://github.com/iamolegga/lemonsqueezy-go/graphs/contributors)
+[![GitHub license](https://img.shields.io/github/license/iamolegga/lemonsqueezy-go?color=brightgreen)](https://github.com/iamolegga/lemonsqueezy-go/blob/master/LICENSE)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/iamolegga/lemonsqueezy-go)](https://pkg.go.dev/github.com/iamolegga/lemonsqueezy-go)
 
 This package provides a go API client for the lemonsqueezy API
 
@@ -15,13 +15,13 @@ This package provides a go API client for the lemonsqueezy API
 `lemonsqueezy-go` is compatible with modern Go releases in module mode, with Go installed:
 
 ```bash
-go get github.com/NdoleStudio/lemonsqueezy-go
+go get github.com/iamolegga/lemonsqueezy-go
 ```
 
 Alternatively the same can be achieved if you use `import` in a package:
 
 ```go
-import "github.com/NdoleStudio/lemonsqueezy-go"
+import "github.com/iamolegga/lemonsqueezy-go"
 ```
 
 ## Implemented
@@ -104,7 +104,7 @@ An instance of the client can be created using `New()`.
 package main
 
 import (
-    "github.com/NdoleStudio/lemonsqueezy-go"
+    "github.com/iamolegga/lemonsqueezy-go"
 )
 
 func main() {
