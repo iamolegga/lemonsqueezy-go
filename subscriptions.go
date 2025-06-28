@@ -47,8 +47,10 @@ type SubscriptionURLs struct {
 
 // SubscriptionPause is object of customer-facing URLs for managing the subscription.
 type SubscriptionPause struct {
-	Mode      string    `json:"mode"`
-	ResumesAt time.Time `json:"resumes_at"`
+	Mode      string     `json:"mode"`
+	Void      bool       `json:"void"`
+	Free      bool       `json:"free"`
+	ResumesAt *time.Time `json:"resumes_at"`
 }
 
 // SubscriptionUpdateParams are parameters for updating a subscription
@@ -63,9 +65,10 @@ type SubscriptionUpdateParamsAttributes struct {
 	VariantID          int                `json:"variant_id,omitempty"`
 	BillingAnchor      int                `json:"billing_anchor,omitempty"`
 	Cancelled          bool               `json:"cancelled"`
-	Pause              *SubscriptionPause `json:"pause,omitempty"`
+	Pause              *SubscriptionPause `json:"pause"`
 	InvoiceImmediately bool               `json:"invoice_immediately"`
 	DisableProrations  bool               `json:"disable_prorations"`
+	TrialEndsAt        *time.Time         `json:"trial_ends_at"`
 }
 
 // ApiResponseRelationshipsSubscription relationships of a subscription object
