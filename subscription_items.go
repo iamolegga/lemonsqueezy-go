@@ -28,6 +28,13 @@ type SubscriptionItemListParams struct {
 // SubscriptionUpdateParamsAttributes are subscription update attributes
 type SubscriptionItemUpdateParamsAttributes struct {
 	Quantity int `json:"quantity,omitempty"`
+	// InvoiceImmediately charges the prorated difference right away instead
+	// of adding it to the next renewal invoice.
+	InvoiceImmediately bool `json:"invoice_immediately,omitempty"`
+	// DisableProrations skips proration entirely: nothing is charged or
+	// credited now and the new quantity is billed from the next renewal.
+	// Overrides InvoiceImmediately.
+	DisableProrations bool `json:"disable_prorations,omitempty"`
 }
 
 type ApiResponseMetaSubscriptionItemCurrentUsage struct {
