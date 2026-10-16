@@ -22,7 +22,7 @@ func (service *SubscriptionItemsService) Update(ctx context.Context, params *Sub
 		},
 	}
 
-	response, err := service.client.do(ctx, http.MethodPatch, "/v1/subscriptions-items/"+params.ID, payload)
+	response, err := service.client.do(ctx, http.MethodPatch, "/v1/subscription-items/"+params.ID, payload)
 	if err != nil {
 		return nil, response, err
 	}
