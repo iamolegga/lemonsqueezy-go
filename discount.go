@@ -18,6 +18,7 @@ type DiscountAttributes struct {
 	DurationInMonths     int        `json:"duration_in_months"`
 	Status               string     `json:"status"`
 	StatusFormatted      string     `json:"status_formatted"`
+	TestMode             bool       `json:"test_mode"`
 	CreatedAt            time.Time  `json:"created_at"`
 	UpdatedAt            time.Time  `json:"updated_at"`
 }
@@ -42,4 +43,19 @@ type DiscountCreateParams struct {
 	Amount     int    `json:"amount"`
 	AmountType string `json:"amountType"`
 	StoreID    int    `json:"storeID"`
+
+	// Duration is how many payments of a subscription the discount covers:
+	// "once", "repeating" or "forever". Empty leaves the API default.
+	Duration string `json:"duration"`
+	// DurationInMonths is the number of months a "repeating" discount covers.
+	DurationInMonths int `json:"durationInMonths"`
+	// VariantIDs limits the discount to these variants. Empty means every
+	// product in the store.
+	VariantIDs []int `json:"variantIDs"`
+	// MaxRedemptions caps how many times the code can be redeemed. Zero means
+	// unlimited.
+	MaxRedemptions int `json:"maxRedemptions"`
+	// StartsAt and ExpiresAt bound when the code is valid. Nil means no bound.
+	StartsAt  *time.Time `json:"startsAt"`
+	ExpiresAt *time.Time `json:"expiresAt"`
 }
