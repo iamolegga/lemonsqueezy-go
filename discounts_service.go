@@ -14,23 +14,56 @@ type DiscountsService service
 //
 // https://docs.lemonsqueezy.com/api/discounts#create-a-discount
 func (service *DiscountsService) Create(ctx context.Context, params *DiscountCreateParams) (*DiscountAPIResponse, *Response, error) {
+	attributes := map[string]any{
+		"name":        params.Name,
+		"code":        params.Code,
+		"amount":      params.Amount,
+		"amount_type": params.AmountType,
+	}
+	relationships := map[string]any{
+		"store": map[string]any{
+			"data": map[string]any{
+				"type": "stores",
+				"id":   strconv.Itoa(params.StoreID),
+			},
+		},
+	}
+
+	// Optional attributes are sent only when set, so a caller that sets none
+	// of them sends the same request as before.
+	if params.Duration != "" {
+		attributes["duration"] = params.Duration
+	}
+	if params.DurationInMonths > 0 {
+		attributes["duration_in_months"] = params.DurationInMonths
+	}
+	if len(params.VariantIDs) > 0 {
+		attributes["is_limited_to_products"] = true
+		variants := make([]map[string]any, 0, len(params.VariantIDs))
+		for _, id := range params.VariantIDs {
+			variants = append(variants, map[string]any{
+				"type": "variants",
+				"id":   strconv.Itoa(id),
+			})
+		}
+		relationships["variants"] = map[string]any{"data": variants}
+	}
+	if params.MaxRedemptions > 0 {
+		attributes["is_limited_redemptions"] = true
+		attributes["max_redemptions"] = params.MaxRedemptions
+	}
+	if params.StartsAt != nil {
+		attributes["starts_at"] = params.StartsAt.UTC()
+	}
+	if params.ExpiresAt != nil {
+		attributes["expires_at"] = params.ExpiresAt.UTC()
+	}
+
 	payload := map[string]any{
 		"data": map[string]any{
-			"type": "discounts",
-			"attributes": map[string]any{
-				"name":        params.Name,
-				"code":        params.Code,
-				"amount":      params.Amount,
-				"amount_type": params.AmountType,
-			},
-			"relationships": map[string]any{
-				"store": map[string]any{
-					"data": map[string]any{
-						"type": "stores",
-						"id":   strconv.Itoa(params.StoreID),
-					},
-				},
-			},
+			"type":          "discounts",
+			"attributes":    attributes,
+			"relationships": relationships,
 		},
 	}
 
